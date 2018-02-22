@@ -1,0 +1,8 @@
+{
+  "name": "firebaseAuth",
+  "app_id": "2973fa41",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
