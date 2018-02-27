@@ -2,12 +2,41 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title></ion-title>
+    <ion-title> 
+      <button ion-button (click)="logout(user)">Logout</button>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  
+  <ion-card>
+    <ion-item no-lines>  
+      <ion-label>{{this.userEmail}}</ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item no-lines>  
+      <ion-label floating>First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="this.userFirstName"></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item no-lines>  
+      <ion-label floating>Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="this.userLastName"></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item no-lines>  
+      <ion-label floating>Age</ion-label>
+      <ion-input type="tel" [(ngModel)]="this.userAge"></ion-input>
+    </ion-item>
+  </ion-card>
 
 </ion-content>

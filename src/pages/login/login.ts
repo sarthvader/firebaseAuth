@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from "../../shared/models/user";
 import { AngularFireAuth } from 'angularfire2/auth';
+
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -19,7 +20,7 @@ export class LoginPage {
     try{
       const result = await this.auth.auth.signInWithEmailAndPassword(user.email, user.password);
       if (result){
-        this.navCtrl.setRoot('HomePage');
+        this.navCtrl.setRoot('ProfilePage');
       }
     }
     catch(e){
@@ -31,7 +32,7 @@ export class LoginPage {
     try{
       const result = await this.auth.auth.createUserWithEmailAndPassword(user.email, user.password);
       if(result){
-        this.navCtrl.setRoot('HomePage');
+        this.navCtrl.setRoot('ProfilePage');
       }
     }
     catch(e){
@@ -41,9 +42,5 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
-  }
-
-  profile(){
-    this.navCtrl.push('ProfilePage');
   }
 }
